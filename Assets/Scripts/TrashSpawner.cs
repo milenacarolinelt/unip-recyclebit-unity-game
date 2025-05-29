@@ -33,6 +33,17 @@ public class TrashSpawner : MonoBehaviour
 
   void SpawnObjeto()
   {
+    CreateSpawnObjeto();
+    Invoke("CreateSpawnObjeto", 5f);
+    
+    if (GameController.intance.Difficulty > 1)
+    {
+      Invoke("CreateSpawnObjeto", 5f);
+    }
+  }
+
+void CreateSpawnObjeto()
+  {
     // Debug.Log("SpawnObjeto");
 
     // Escolhe um prefab aleatoriamente
@@ -49,6 +60,8 @@ public class TrashSpawner : MonoBehaviour
 
     // Instancia o objeto
     Instantiate(prefabSelecionado, posicaoSpawn, Quaternion.identity);
+
   }
+
 
 }

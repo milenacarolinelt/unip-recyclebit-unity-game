@@ -51,7 +51,7 @@ public class GameController : MonoBehaviour
         WinPainel.SetActive(false);
         MenuPainel.SetActive(false);
         Garbage.SetActive(false);
-        
+
         InitPainel.SetActive(true);
     }
 
@@ -70,6 +70,22 @@ public class GameController : MonoBehaviour
     public void UpdateScoreText()
     {
         ScoreText.text = "Score: " + TotalScore.ToString();
+
+        if (TotalScore < 0) {
+            PauseGame();
+            GameOverPainel.SetActive(true);            
+        }
+
+        if (Difficulty == 1 && TotalScore == 1000) {
+            PauseGame();
+            WinPainel.SetActive(true);
+        } else if (Difficulty == 2 && TotalScore == 1200) {
+            PauseGame();
+            WinPainel.SetActive(true);
+        } else if (Difficulty == 3 && TotalScore >= 1400) {
+            PauseGame();
+            WinPainel.SetActive(true);
+        }
     }
 
     public void UpdateDifficulty(string textoSelecionado)
