@@ -18,8 +18,8 @@ public class TrashItem : MonoBehaviour
 
   void OnTriggerEnter2D(Collider2D collider)
   {
-      Debug.Log(gameObject);
-      Debug.Log(collider.gameObject.tag);
+      // Debug.Log(gameObject);
+      // Debug.Log(collider.gameObject.tag);
     if (collider.gameObject.tag == "Player")
     {
       sr.enabled = false;

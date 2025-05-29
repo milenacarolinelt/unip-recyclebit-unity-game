@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ButtonStartGame : MonoBehaviour
+public class ButtonRestartGame : MonoBehaviour
 {
     public Button meuBotao;
 
@@ -15,6 +15,6 @@ public class ButtonStartGame : MonoBehaviour
 
     void OnClickButton()
     {
-        GameController.intance.StartGame();
+        GameController.intance.RestartGame();
     }
 }

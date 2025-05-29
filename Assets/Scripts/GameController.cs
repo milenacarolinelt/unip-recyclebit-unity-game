@@ -26,7 +26,7 @@ public class GameController : MonoBehaviour
     {
         intance = this;
     }
-    
+
     public void StartGame()
     {
         TotalScore = 0;
@@ -40,6 +40,19 @@ public class GameController : MonoBehaviour
         Garbage.SetActive(true);
 
         TrashSpawner.intance.initSpawner();
+    }
+
+    public void RestartGame()
+    {
+        TotalScore = 0;
+        UpdateScoreText();
+
+        GameOverPainel.SetActive(false);
+        WinPainel.SetActive(false);
+        MenuPainel.SetActive(false);
+        Garbage.SetActive(false);
+        
+        InitPainel.SetActive(true);
     }
 
     public void ResumeGame()
@@ -65,12 +78,12 @@ public class GameController : MonoBehaviour
         if (textoSelecionado == "MEDIUM")
         {
             Difficulty = 2;
-            GravityScale = 0.5f; 
+            GravityScale = 0.4f;
         }
         else if (textoSelecionado == "HARD")
         {
             Difficulty = 3;
-            GravityScale = 1f;
+            GravityScale = 0.7f;
         }
         else
         {

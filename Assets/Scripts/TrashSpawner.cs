@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TrashSpawner : MonoBehaviour
 {
@@ -39,7 +40,7 @@ public class TrashSpawner : MonoBehaviour
     GameObject prefabSelecionado = objetosPrefabs[indiceAleatorio];
 
     Rigidbody2D rb = prefabSelecionado.GetComponent<Rigidbody2D>();
-    rb.gravityScale = 0.2f; // Padrão é 1. Menores valores = queda mais lenta
+    rb.gravityScale = GameController.intance.GravityScale; // Padrão é 1. Menores valores = queda mais lenta
     rb.linearVelocity = new Vector3(0, velocidadeQueda, 0);
 
     // Define a posição aleatória no eixo X
