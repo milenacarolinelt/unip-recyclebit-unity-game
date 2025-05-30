@@ -25,9 +25,11 @@ public class TrashItemNonRecyclable : MonoBehaviour
       sr.enabled = false;
       boxCollider.enabled = false;
 
-      Debug.Log("VIDAS ATUAIS" + GameController.intance.TotalLife);
+      // Debug.Log("VIDAS ATUAIS" + GameController.intance.TotalLife);
 
       GameController.intance.TotalScore -= Score;
+      GameController.intance.UpdateScoreText();
+
       GameController.intance.TotalLife =  GameController.intance.TotalLife - 1;
       GameController.intance.UpdateLifes();
 

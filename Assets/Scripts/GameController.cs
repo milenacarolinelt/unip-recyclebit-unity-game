@@ -88,7 +88,7 @@ public class GameController : MonoBehaviour
     {
 
         
-        Debug.Log("TotalLife: " + TotalLife);
+        // Debug.Log("TotalLife: " + TotalLife);
 
         if (TotalLife == 0)
         {
@@ -163,7 +163,7 @@ public class GameController : MonoBehaviour
 
     public void UpdateDifficulty(string textoSelecionado)
     {
-        Debug.Log("Selecionado: " + textoSelecionado);
+        // Debug.Log("Selecionado: " + textoSelecionado);
         if (textoSelecionado == "MEDIUM")
         {
             Difficulty = 2;
